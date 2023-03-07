@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', 'HomeController@home')->name('home');
-Route::get('/products', 'HomeController@viewProduct')->name('products');
-Route::get('/products/edit', 'HomeController@edit')->name('edit-product');
+Route::get('/', 'ProductController@home')->name('home');
+Route::get('/products', 'ProductController@viewProduct')->name('products');
+Route::get('/products/edit', 'ProductController@edit')->name('edit-product');
+
+Route::post('/product/store', 'ProductController@store')->name('store-product');

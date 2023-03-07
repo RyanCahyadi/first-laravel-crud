@@ -11,7 +11,7 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">My CRUD</a>
+    <a class="navbar-brand" href="{{ route('home') }}">My CRUD</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -28,19 +28,20 @@
     </div>
   </nav>
   <div class="container mt-5" style="width: 33%;">
-    <form class="mb-4">
+    <form class="mb-4" action="{{ route('store-product') }}" method="POST">
+      @csrf
       <h1 class="text-center mb-4">Create Product</h1>
       <div class="form-group">
         <label for="">Product Name</label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" name="productName">
       </div>
       <div class="form-group">
         <label for="">Price</label>
-        <input type="number" class="form-control">
+        <input type="number" class="form-control" name="productPrice">
       </div>
       <div class="form-group">
         <label for="">Stock</label>
-        <input type="number" class="form-control">
+        <input type="number" class="form-control" name="productStock">
       </div>
       <button type="submit" id="btn-submit" class="btn btn-primary mt-3">Submit</button>
     </form>
