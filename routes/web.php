@@ -23,3 +23,4 @@ Route::get('/product/edit/{id}', 'ProductController@editProduct')->name('edit-pr
 
 Route::post('/product/store', 'ProductController@store')->name('store-product');
 Route::patch('/product/update/{id}', 'ProductController@updateProduct')->name('update-product');
+Route::delete('/product/delete/{id}', 'ProductController@deleteProduct')->name('delete-product');
