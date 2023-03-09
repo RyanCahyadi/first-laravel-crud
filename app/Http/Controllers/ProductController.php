@@ -30,8 +30,21 @@ class ProductController extends Controller
         return view('products', compact('products'));
     }
 
-    public function editProduct()
+    public function editProduct($id)
     {
-        return view('edit');
+        $product = Product::where('id', $id)->first();
+        return view('edit', compact('product'));
     }
+
+    public function updateProduct(Request $request, $id)
+    {
+        Product::where('id', $id)->update([
+            'product_name'  => $request->productName,
+            'price'         => $request->productPrice,
+            'stock'         => $request->productStock
+        ]);
+
+        return redirect('/products');
+    }
+
 }

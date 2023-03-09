@@ -48,7 +48,7 @@
           <td>{{ $product->price }}</td>
           <td>{{ $product->stock }}</td>
           <td>
-            <a href="" class="btn btn-success">Edit</a>
+            <a href="{{ route('edit-product', $product->id) }}" class="btn btn-success">Edit</a>
             <button type="submit" class="btn btn-danger">Delete</button>
           </td>
         </tr>

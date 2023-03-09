@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::get('/', 'ProductController@home')->name('home');
 Route::get('/products', 'ProductController@viewProduct')->name('products');
-Route::get('/products/edit', 'ProductController@edit')->name('edit-product');
+Route::get('/product/edit/{id}', 'ProductController@editProduct')->name('edit-product');
 
 Route::post('/product/store', 'ProductController@store')->name('store-product');
+Route::patch('/product/update/{id}', 'ProductController@updateProduct')->name('update-product');
