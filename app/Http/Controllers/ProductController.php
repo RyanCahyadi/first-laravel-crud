@@ -21,12 +21,13 @@ class ProductController extends Controller
             'stock'         => $request->productStock
         ]);
 
-        return back();
+        return redirect('/products');
     }
 
     public function viewProduct()
     {
-        return view('products');
+        $products = Product::all();
+        return view('products', compact('products'));
     }
 
     public function editProduct()
